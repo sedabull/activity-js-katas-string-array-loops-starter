@@ -20,3 +20,27 @@
 */
 
 // YOUR CODE HERE
+const result = document.querySelector('#result');
+const input = document.querySelector('#inputBox');
+const longWord = document.querySelector('#longWord');
+const submit = document.querySelector('#submitButton');
+
+submit.addEventListener('click', function(){
+    let i = 0;
+    let count = 0;
+    const letter = input.value;
+    const word = longWord.innerText;
+    
+    while (i < word.length) {
+        if (word[i] === letter) {
+            count++;
+        }//end if
+        i++;
+    }//end while
+
+    if (count) {
+        result.innerText = `The letter ${letter} exists ${count} times in this word!`;
+    } else {
+        result.innerText = "Nope, that letter doesn't exist in my word!";
+    }//end if/else
+});//end submit
