@@ -9,3 +9,19 @@
 */
 
 // YOUR CODE HERE
+let tallest = 0;
+const heights = [];
+const result = document.querySelector('#result');
+
+for(let i = 0; i < 100; i++) {
+    heights.push(Math.floor(Math.random() * 29029));
+};//end for
+console.log(heights);
+
+heights.forEach((height) => {
+    if(height > tallest) {
+        tallest = height;
+    }//end if
+});//end forEach
+
+result.innerText = `The tallest mountain is ${tallest} feet tall!`;
